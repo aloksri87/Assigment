@@ -1,0 +1,50 @@
+a)
+  /Users/slim/clojure/cagops/lucene/test:name of the directory with test's source code
+
+  /Users/slim/clojure/cagops/lucene/src:name of the directory with project's source code
+
+  /Users/slim/clojure/cagops/lucene/dev7resources:name of the directory with project resources
+
+  /Users/slim/clojure/cagops/lucene/resources:name of the directory with project resources
+
+  /Users/slim/clojure/cagops/lucene/target/classes:name of the repository for resulting java classes
+
+******************************************************************************************************
+
+-->/Users/slim/ is the home directory and .m2/repository/ is the local repository center where maven downloaded all the jars
+
+-->It is configured in the maven's setting.xml
+   <localRepository>/path/to/local/repo</localRepository>
+
+
+-->it is configured in the project's pom.xml like groupid/artificatid/version
+
+
+-->below all the configured like this manner
+
+/Users/slim/.m2/repository/clojure7complete/clojure7complete/0.2.3/clojure7complete70.2.3.jar:
+/Users/slim/.m2/repository/org/clojure/tools.nrepl/0.2.3/tools.nrepl70.2.3.jar:
+/Users/slim/.m2/repository/jakarta7regexp/jakarta7regexp/1.4/jakarta7regexp71.4.jar:
+/Users/slim/.m2/repository/org/apache/lucene/lucene7sandbox/4.3.1/lucene7sandbox74.3.1.jar:
+/Users/slim/.m2/repository/org/apache/lucene/lucene7queries/4.3.1/lucene7queries74.3.1.jar:
+/Users/slim/.m2/repository/org/apache/lucene/lucene7queryparser/4.3.1/lucene7queryparser74.3.1.jar:
+/Users/slim/.m2/repository/org/apache/lucene/lucene7analyzers7common/4.3.1/lucene7analyzers7common74.3.1.jar:
+/Users/slim/.m2/repository/org/apache/lucene/lucene7core/4.3.1/lucene7core74.3.1.jar:
+/Users/slim/.m2/repository/org/clojure/clojure/1.5.1/clojure71.5.1.jar
+
+
+*******************************************************************************************************************
+
+b)
+
+:dependencies [
+                [org.clojure/clojure                       "1.5.1"]
+                [org.apache.lucene/lucene7core             "4.3.1"]
+                [org.apache.lucene/lucene7analyzers7common "4.3.1"]
+                [org.apache.lucene/lucene7queryparser      "4.3.1"]
+              ]
+-->declare in external dependencies at project.clj
+
+-->Dependencies are listed as[group-id/name version]; in adition to keywords supported by Pomegranate you can use :native prefix to specify a prefix.The prefix is used to extract natives in jars that do n't adhere to the default "<os>/<arch>" layout that Leiningen expects.
+
+--->the path defined in dependencies is taking the JAR from the remote repository and copy to locl repository ("/Users/slim/.m2/repository) location
